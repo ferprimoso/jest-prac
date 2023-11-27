@@ -1,7 +1,5 @@
 export default function analyzeArray(arr) {
-    if(!Array.isArray(arr)) return 'Invalid input'
-
-    if(arr.filter((e) => typeof e !== 'number').length > 0 ) return 'Invalid input'
+    if(!Array.isArray(arr) || arr.filter((e) => typeof e !== 'number').length > 0 ) return 'Invalid input'
 
     const average = arr.reduce((a, b) => a + b, 0) / arr.length;
     const min = arr.reduce((a, b) => Math.min(a, b))
